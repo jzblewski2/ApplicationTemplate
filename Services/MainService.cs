@@ -9,9 +9,11 @@ namespace ApplicationTemplate.Services;
 public class MainService : IMainService
 {
     private readonly IFileService _fileService;
-    public MainService(IFileService fileService)
+    private readonly IMovieService _movieService;
+    public MainService(IFileService fileService, IMovieService movieService)
     {
         _fileService = fileService;
+        _movieService = movieService;
     }
 
     public void Invoke()
@@ -29,11 +31,11 @@ public class MainService : IMainService
             // Is it part of the FileService or some other service?
             if (choice == "1")
             {
-                _fileService.Write();
+                _movieService.Write();
             }
             else if (choice == "2")
             {
-                _fileService.Read();
+                _movieService.Read();
             }
         }
         while (choice != "X");

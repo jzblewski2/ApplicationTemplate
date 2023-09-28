@@ -20,9 +20,11 @@ internal class Startup
             builder.AddFile("app.log");
         });
 
-        // Add new lines of code here to register any interfaces and concrete services you create
+        // Add new lines of code here to register any interfaces and concrete services you create 
         services.AddTransient<IMainService, MainService>();
         services.AddTransient<IFileService, FileService>();
+        //LINE ADDED
+        services.AddTransient<IMovieService, MovieService>(); 
 
         return services.BuildServiceProvider();
     }
