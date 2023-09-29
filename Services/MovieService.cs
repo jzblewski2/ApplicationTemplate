@@ -62,16 +62,13 @@ namespace ApplicationTemplate
 
                 using var reader = new StreamReader(movieDataFile);
                 MovieStructure movie = new MovieStructure();
-
+                reader.ReadLine();
                 while (!reader.EndOfStream)
                 {
                     var line3 = reader.ReadLine();
 
                     string[] movieInfo = line3.Split(',');
-
-                    //FORMATTING ERROR MESSAGE
                     movie.id = int.Parse(movieInfo[0]);
-
                     movie.title = movieInfo[1];
                     movieList.Add(movie);
                 }
@@ -113,7 +110,7 @@ namespace ApplicationTemplate
 
                     string movieGenres = string.Join("|", movieGenre);
 
-                    write.WriteLine(" {0},{1},{2}", movie.id, movieTitle, movieGenres);
+                    write.WriteLine("{0},{1},{2}", movie.id, movieTitle, movieGenres);
                     Console.WriteLine(" add another movie? (Y/N) ");
                     response = Console.ReadLine().ToUpper();
 
