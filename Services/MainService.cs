@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ApplicationTemplate.Data;
+using ApplicationTemplate.Models;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApplicationTemplate.Services;
 
@@ -8,36 +11,40 @@ namespace ApplicationTemplate.Services;
 /// </summary>
 public class MainService : IMainService
 {
-    private readonly IFileService _fileService;
-    private readonly IMovieService _movieService;
-    public MainService(IFileService fileService, IMovieService movieService)
+    public MainService()
     {
-        _fileService = fileService;
-        _movieService = movieService;
+       
     }
-
     public void Invoke()
     {
         string choice;
         do
         {
-            Console.WriteLine("1) Add Movie");
-            Console.WriteLine("2) Display All Movies");
-            Console.WriteLine("X) Quit");
+            Console.WriteLine("1. Display Movies");
+            Console.WriteLine("2. Display Shows");
+            Console.WriteLine("3. Display Videos");
+            Console.WriteLine("press 0 to exit");
             choice = Console.ReadLine();
+            Media media = null;
 
-            // Logic would need to exist to validate inputs and data prior to writing to the file
-            // You would need to decide where this logic would reside.
-            // Is it part of the FileService or some other service?
-            if (choice == "1")
+            switch (choice)
             {
-                _movieService.Write();
-            }
-            else if (choice == "2")
-            {
-                _movieService.Read();
-            }
-        }
-        while (choice != "X");
+                case "1":
+                    media = new Movie { Id = 1, Title = "Toy Story", Genres = "Animation, Adventure" };
+                    break;
+                case "2":
+                    media = new Show { Id = 1, Title = "Supernatural", Season = 2, Episode = 12, Writers = "Kripke" };
+                    break;
+                case "3":
+                    media = new Video { Id = 1, Title = "Lethal Weapon 3", Format = "VHS, DVD, BluRay", Length = 100, Regions = "0,2" };
+                    break;
+                case "0":
+                    break;
+                default:
+                    Console.WriteLine("please try again ⟲");
+                    break;
+            } media?.Display();
+        }while (choice != "0");
+        
     }
 }
