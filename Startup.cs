@@ -23,6 +23,7 @@ internal class Startup
         // Add new lines of code here to register any interfaces and concrete services you create 
         services.AddTransient<IMainService, MainService>();
         services.AddTransient<IFileService, FileService>();
+        services.AddTransient<IMediaService, MediaService>();
 
         return services.BuildServiceProvider();
     }

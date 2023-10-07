@@ -11,15 +11,17 @@ namespace ApplicationTemplate.Services;
 /// </summary>
 public class MainService : IMainService
 {
-    public MainService()
+    private readonly IMediaService _mediaService;
+    public MainService(IMediaService mediaService)
     {
-       
+        _mediaService = mediaService;
     }
     public void Invoke()
     {
         string choice;
         do
         {
+            Console.WriteLine();
             Console.WriteLine("1. Display Movies");
             Console.WriteLine("2. Display Shows");
             Console.WriteLine("3. Display Videos");
@@ -30,13 +32,13 @@ public class MainService : IMainService
             switch (choice)
             {
                 case "1":
-                    media = new Movie { Id = 1, Title = "Toy Story", Genres = "Animation, Adventure" };
+                    _mediaService.ReadMovies();
                     break;
                 case "2":
-                    media = new Show { Id = 1, Title = "Supernatural", Season = 2, Episode = 12, Writers = "Kripke" };
+                    _mediaService.ReadShows();
                     break;
                 case "3":
-                    media = new Video { Id = 1, Title = "Lethal Weapon 3", Format = "VHS, DVD, BluRay", Length = 100, Regions = "0,2" };
+                    _mediaService.ReadVideos();
                     break;
                 case "0":
                     break;
