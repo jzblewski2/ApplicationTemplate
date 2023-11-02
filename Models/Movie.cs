@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationTemplate.Models
 {
-        public class Movie : Media
-        {
-            public string Genres { get; set; }
-
-            public override string Display()
-            {
-                return $"ID: {Id}, Title: {Title}, Genres: {Genres}";
-            }
-        }
+    public class Movie
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+    }
 }

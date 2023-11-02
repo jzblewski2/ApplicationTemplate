@@ -1,4 +1,5 @@
 ﻿using System;
+using ApplicationTemplate.Data;
 using ApplicationTemplate.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -22,8 +23,7 @@ internal class Startup
 
         // Add new lines of code here to register any interfaces and concrete services you create 
         services.AddTransient<IMainService, MainService>();
-        services.AddTransient<IFileService, FileService>();
-        services.AddTransient<IMediaService, MediaService>();
+        services.AddTransient<IContext, Context>();
 
         return services.BuildServiceProvider();
     }
