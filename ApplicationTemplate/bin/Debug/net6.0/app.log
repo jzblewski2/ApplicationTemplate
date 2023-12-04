@@ -1,0 +1,12 @@
+2023-09-28T01:42:57.1385007-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T02:19:52.8734380-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Writing
+2023-09-28T02:19:54.9435822-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T02:43:24.3739072-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Writing
+2023-09-28T02:43:25.9290118-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T02:45:24.8491661-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Writing
+2023-09-28T02:45:25.5197483-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T03:53:46.6339144-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T03:53:49.5570953-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Writing
+2023-09-28T04:52:35.2392761-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
+2023-09-28T17:09:04.5796514-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Writing
+2023-09-28T17:09:05.8028236-05:00	INFO	[ApplicationTemplate.Services.IFileService]	[0]	Reading
