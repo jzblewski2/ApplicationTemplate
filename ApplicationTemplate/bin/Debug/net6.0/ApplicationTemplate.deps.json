@@ -1473,7 +1473,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
-          "Microsoft.Extensions.Configuration.Json": "6.0.0"
+          "Microsoft.Extensions.Configuration.Json": "6.0.0",
+          "Microsoft.Extensions.Logging.Console": "6.0.0"
         },
         "runtime": {
           "MovieLibraryEntities.dll": {}
