@@ -14,10 +14,6 @@ public class MovieContext : DbContext
     public DbSet<Occupation> Occupations { get; set; }
     public DbSet<UserMovie> UserMovies { get; set; }
     public DbSet<User> Users { get; set; }
-    public MovieContext()
-    {
-            
-    }
 
     public MovieContext(ILogger<MovieContext> logger)
     {

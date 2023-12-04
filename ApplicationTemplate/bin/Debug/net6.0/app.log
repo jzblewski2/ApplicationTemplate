@@ -49,3 +49,122 @@
       Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
       FROM [Movies] AS [m]
+2023-12-04T13:25:36.4802836-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:25:36.473 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:25:37.3189827-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:25:37.318 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:37:37.9648581-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:37:37.958 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:37:38.7524921-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:37:38.752 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (83ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:38:34.0835684-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:38:34.076 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:38:34.8782317-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:38:34.878 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (74ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:39:24.3360565-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:39:24.329 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:39:25.2066571-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:39:25.206 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (95ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:39:54.5410573-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:39:54.534 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:39:55.1399366-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:39:55.139 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:40:41.1487368-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:40:41.141 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:40:41.7541017-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:40:41.754 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:41:11.5166557-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:11.510 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:41:12.4176582-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:12.417 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (74ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:41:17.8761015-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:17.876 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (52ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      DELETE FROM [Movies]
+      WHERE [Id] = @p0;
+      SELECT @@ROWCOUNT;
+2023-12-04T13:41:28.1042167-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:28.097 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:41:28.7131540-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:28.713 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:41:38.0539506-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:38.047 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:41:38.6584904-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:41:38.658 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:42:35.6944733-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:42:35.687 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:42:36.2998532-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:42:36.299 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:43:29.6120006-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:29.605 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:43:30.6640148-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:30.663 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (102ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Movies] ([ReleaseDate], [Title])
+      VALUES (@p0, @p1);
+      SELECT [Id]
+      FROM [Movies]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-12-04T13:43:41.3774547-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:41.370 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:43:42.3236796-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:42.323 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+2023-12-04T13:43:57.6793549-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:57.672 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:43:58.4686247-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:43:58.468 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (74ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:44:14.7467699-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:14.740 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:44:15.8711213-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:15.871 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (154ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:44:31.3839649-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:31.377 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:44:32.1507567-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:32.150 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (73ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:44:46.3871672-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:46.380 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.10 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+2023-12-04T13:44:47.1664116-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:47.166 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (79ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [m].[Id], [m].[ReleaseDate], [m].[Title]
+      FROM [Movies] AS [m]
+      WHERE (@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, LOWER([m].[Title])) > 0)
+2023-12-04T13:44:52.3045992-06:00	INFO	[MovieLibraryEntities.Context.MovieContext]	[0]	info: 12/4/2023 13:44:52.304 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (72ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      DELETE FROM [Movies]
+      WHERE [Id] = @p0;
+      SELECT @@ROWCOUNT;

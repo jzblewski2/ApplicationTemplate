@@ -1,4 +1,5 @@
-﻿using MovieLibraryEntities.Context;
+﻿using Microsoft.Extensions.Logging;
+using MovieLibraryEntities.Context;
 using MovieLibraryEntities.Dao;
 using MovieLibraryEntities.Models;
 using System;
@@ -12,12 +13,14 @@ namespace ApplicationTemplate.Services;
 /// </summary>
 public class MainService : IMainService
 {
-
+    
     private readonly IRepository _repository;
+    private readonly ILogger<MovieContext> logger;
 
-    public MainService(IRepository repository)
+    public MainService(IRepository repository, ILogger<MovieContext> logger)
     {
         _repository = repository;
+        this.logger = logger;
     }
     public void Invoke()
     {
@@ -49,7 +52,14 @@ public class MainService : IMainService
                             Console.WriteLine("Movies: \nId, Title (Release Date)");
                             foreach (var m in selectedTitle)
                             {
-                                Console.WriteLine($"{m.Id}, {m.Title}");
+                                if (m.Id > 1682)
+                                {
+                                    Console.WriteLine($"{m.Id}, {m.Title} ({m.ReleaseDate.Year})");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{m.Id}, {m.Title}");
+                                }
                             }
                         }
                         else
@@ -65,7 +75,7 @@ public class MainService : IMainService
                     break;
                 // 2. add movie 
                 case "2":
-                    using (var db = new MovieContext())
+                    using (var db = new MovieContext(logger))
                     {
                         Console.WriteLine();
                         Console.WriteLine("enter movie title: ");
@@ -109,7 +119,7 @@ public class MainService : IMainService
                     break;
                 // 4. update movie - EXTRA CREDIT
                 case "4":
-                    using (var db = new MovieContext())
+                    using (var db = new MovieContext(logger))
                     {
                         Console.WriteLine();
                         Console.WriteLine("enter movie title to update: ");
@@ -153,7 +163,7 @@ public class MainService : IMainService
                     break;
                 // 5. delete movie - EXTRA CREDIT
                 case "5":
-                    using (var db = new MovieContext())
+                    using (var db = new MovieContext(logger))
                     {
                         Console.WriteLine();
                         Console.WriteLine("enter movie title to delete: ");
