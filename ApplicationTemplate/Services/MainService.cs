@@ -13,7 +13,7 @@ namespace ApplicationTemplate.Services;
 /// </summary>
 public class MainService : IMainService
 {
-    
+
     private readonly IRepository _repository;
     private readonly ILogger<MovieContext> logger;
 
@@ -30,6 +30,8 @@ public class MainService : IMainService
         //EXTRA CREDIT
         Console.WriteLine("4. update movie");
         Console.WriteLine("5. delete movie");
+        Console.WriteLine("6. add user");
+        Console.WriteLine("7. rate movie");
         Console.WriteLine("enter x to exit");
         Console.WriteLine();
 
@@ -93,6 +95,7 @@ public class MainService : IMainService
 
                             db.Movies.Add(movie);
                             db.SaveChanges();
+                            Console.WriteLine($"{movieTitle2} was added");
                         }
                         else
                         {
@@ -124,7 +127,7 @@ public class MainService : IMainService
                         Console.WriteLine();
                         Console.WriteLine("enter movie title to update: ");
                         var movieTitle4 = Console.ReadLine();
-                        if(movieTitle4 != null && movieTitle4 != "")
+                        if (movieTitle4 != null && movieTitle4 != "")
                         {
                             var selectedTitle4 = db.Movies.FirstOrDefault(m => m.Title.ToLower().Contains(movieTitle4.ToLower()));
 
@@ -146,16 +149,18 @@ public class MainService : IMainService
 
                                     db.SaveChanges();
                                     Console.WriteLine($"{movieTitle4} was updated to {updatedTitle}");
-                                } else
+                                }
+                                else
                                 {
                                     Console.WriteLine("movie title cannot be blank");
-                                }                                
+                                }
                             }
                             else
                             {
                                 Console.WriteLine("error finding movie... no movie updated");
                             }
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("movie title cannot be blank");
                         }
@@ -184,27 +189,171 @@ public class MainService : IMainService
                                 {
                                     //y for yes
                                     case "y":
+                                    case "Y":
                                         db.Movies.Remove(selectedTitle5);
                                         db.SaveChanges();
                                         Console.WriteLine($"{movieTitle5} was deleted");
                                         break;
                                     //n for no
                                     case "n":
+                                    case "N":
                                         break;
                                     default:
                                         Console.WriteLine("please answer y for yes or n for no");
                                         break;
                                 }
-                            } else
+                            }
+                            else
                             {
                                 Console.WriteLine("error finding movie... no movie deleted");
                             }
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("movie title cannot be blank");
                         }
                     }
                     break;
+
+                //6. add user
+                case "6":
+                    using (var db = new MovieContext(logger))
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("enter user's age: ");
+                        var userAge = long.Parse(Console.ReadLine());
+                        if (userAge >= 0)
+                        {
+                            Console.WriteLine("enter user's gender (M/F): ");
+                            var userGender = Console.ReadLine().ToUpper();
+                            if (userGender == "M" || userGender == "F")
+                            {
+                                Console.WriteLine("enter user's zip code: ");
+                                var userZipCode = Console.ReadLine();
+                                if (userZipCode != null && userZipCode != "")
+                                {
+                                    var occupationOptions = _repository.GetAllOccupations();
+
+                                    Console.WriteLine();
+                                    Console.WriteLine("Occupation Options: ");
+                                    foreach (var occ in occupationOptions)
+                                    {
+                                        Console.WriteLine($"{occ.Id}. {occ.Name}");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine("enter user's occupation (corresponding id): ");
+                                    long? userOccupation = int.Parse(Console.ReadLine());
+
+                                    var occupation = occupationOptions.FirstOrDefault(x => x.Id == userOccupation);
+
+                                    if (userOccupation != null && userOccupation != 0)
+                                    {
+                                        var user = new User
+                                        {
+                                            Age = userAge,
+                                            Gender = userGender,
+                                            ZipCode = userZipCode,
+                                            OccupationId = occupation.Id
+                                        };
+
+                                        db.Users.Add(user);
+                                        db.SaveChanges();
+
+
+                                        Console.WriteLine($"User added: \nId: {user.Id}\nAge: {user.Age}\nGender: {user.Gender}\nZip Code: {user.ZipCode}\nOccupation Id: {user.OccupationId}");
+                                        Console.WriteLine("*** please remember user id to rate a movie ***");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("please enter valid occupation");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("please enter valid zip code");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("please enter M for male or F for female");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("age cannot be under 0");
+                        }
+                    }
+                    break;
+                case "7":
+                    using (var db = new MovieContext(logger))
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("enter user id: ");
+                        var userId = int.Parse(Console.ReadLine());
+                        var selectedUser = db.Users.FirstOrDefault(u => u.Id == userId);
+                        if (selectedUser != null)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine($"current selection: Id:{selectedUser.Id}, Age:{selectedUser.Age}, Gender:{selectedUser.Gender}, Zip:{selectedUser.ZipCode}, OccupationId: {selectedUser.OccupationId}");
+                            Console.WriteLine("is this correct? (y/n)");
+                            var userConfirm = Console.ReadLine();
+                            if (userConfirm == "y" || userConfirm == "Y")
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("enter movie id to rate: ");
+                                var movieId = int.Parse(Console.ReadLine());
+                                var selectedMovie = db.Movies.FirstOrDefault(m => m.Id == movieId);
+                                if (selectedMovie != null)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine($"current selection: {selectedMovie.Id}, {selectedMovie.Title} - {selectedMovie.ReleaseDate}");
+                                    Console.WriteLine("is this correct? (y/n)");
+                                    var userConfirm2 = Console.ReadLine();
+                                    if (userConfirm2 == "y" || userConfirm2 == "Y")
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("enter movie rating (1 - 5): ");
+                                        var movieRating = int.Parse(Console.ReadLine());
+                                        if (movieRating >= 1 && movieRating <= 5)
+                                        {
+                                            var userMovieRating = new UserMovie
+                                            {
+                                                Rating = movieRating,
+                                                RatedAt = DateTime.Now,
+                                                User = selectedUser,
+                                                Movie = selectedMovie
+                                            };
+
+                                            db.UserMovies.Add(userMovieRating);
+                                            db.SaveChanges();
+
+                                            Console.WriteLine();
+                                            Console.WriteLine("Movie rating added... ");
+                                            Console.WriteLine($"Rating Id: {userMovieRating.Id}\nRating: {userMovieRating.Rating}\nRated At: {userMovieRating.RatedAt}\nUser Id: {userMovieRating.User.Id}\nMovie Id: {userMovieRating.Movie.Id}\nTitle: {userMovieRating.Movie.Title}");
+                                        } else
+                                        {
+                                            Console.WriteLine("rating must be between 1 and 5");
+                                        }
+                                    } else
+                                    {
+                                        break;
+                                    }
+                                } else
+                                {
+                                    Console.WriteLine("error finding movie... no movie to rate");
+                                }
+                            } else
+                            {
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("error finding user... please try again");
+                        }
+                    }
+                    break;
+
                 case "x":
                     break;
                 default:

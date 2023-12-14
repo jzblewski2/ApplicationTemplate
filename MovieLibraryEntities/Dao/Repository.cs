@@ -37,5 +37,15 @@ namespace MovieLibraryEntities.Dao
 
             return temp;
         }
+
+        public IEnumerable<Occupation> GetAllOccupations()
+        {
+            return _context.Occupations.ToList();
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _context.Users.ToList();
+        }
     }
 }
